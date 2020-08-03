@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Restaraunt Application</title>
+	
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+	<link rel="ico" href="https://www.apkmirror.com/wp-content/uploads/2019/01/5c3750111e19e-384x384.png">
+
+
+	<!--style -->
+	<style type="text/css">
+		body{
+			margin: 0;
+			background: #027272;
+
+		}
+		.header h1{
+			text-align: center;
+			font-family: 'Lato', sans-serif;
+			color: rgb(0, 0, 0);
+		}
+		.header{
+			background-color: rgb(5, 4, 4);
+			padding: 3px;
+		}
+		.content img{
+			width: 300px;
+			height: 250px;
+			border-radius: 15px; 
+		}
+		.content{
+			height: 280px;
+			background-color: rgb(8, 4, 4);
+			border-radius: 10px 1px 1px 10px;
+		}
+		
+		
+		.details{
+			margin-left:170px;
+			margin-top: 8px;
+		}
+		@media only screen and (max-width: 1120px) { 
+		  body {
+		    background-color: rgb(148, 203, 235);
+		  }
+		}
+	</style> 
+</head>
+<body>
+	<div class="header">
+		<h1>Restaurant Application</h1>
+	</div>
+	<br>
+	<br>
+	<% for (var i of data) { %>
+
+	<div class="content">
+		<div class="image">
+		<% if (i.res_image!= ''){ %>
+			<img src= <%= i.res_image %> >
+		<% } else { %>
+			<img src=" ">
+		<% } %>
+		</div>
+		<div class="text">
+			<center><h1><%= i.name %></h1></center>
+			<center><p class="address"><%= i.res_address %></p></center>
+			<hr>
+			<table class="details">
+				<tr>
+					<td class="key">Town   :</td>
+					<td><%= i.res_town %></td>
+				</tr>
+				<tr>
+					<td class="key">Location   :</td>
+					<td><%= i.res_situation %></td>
+				</tr>
+				
+			</table>
+		</div>
+
+
+	</div>
+	<br>
+	<br>
+
+	<% } %>
+
+</body>
+</html>
